@@ -1,0 +1,37 @@
+  .yellow h2 {
+  color: #FBA504 ;
+}
+
+#lanAc{
+  display: inline-block;
+  padding: 0px 0px;
+  background-color: #ffffff;
+  color: blue;
+  border-radius: 0px;
+  border-style: none;
+  -webkit-transition: none ;
+  transition: none ;
+  margin-top: 0px;
+}
+
+
+.firstRow{
+  background-color: #023047;
+}
+.slider{
+  background-color: #ffffff;
+}
+.slider_section .detail-box  .sliderBox{
+  color: #023047;
+}
+.rowContainer{
+  margin-top:50px ;
+
+}
+.white{
+  color: #ffffff;  
+}
+.location{
+  display:flex;
+}
+
