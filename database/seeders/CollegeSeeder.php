@@ -18,8 +18,29 @@ class CollegeSeeder extends Seeder
          */{
             $colleges = [
                 [
-                    'name' => 'College of Electrical Engineering and Computer Science',
+                    'name' => ' Engineering & Technology ',
+                    'image' => 'engineer.png',
+                    'uni_id' => 1,  
+                ], [
+                    'name' => ' Computer Science & IT ',
                     'image' => 'collegepic1.png',
+                    'uni_id' => 1,  
+                ],
+                
+                [
+                    'name' => ' Medicine & Health',
+                    'image' => 'medicen.png',
+                    'uni_id' => 1,  
+                ],
+                [
+                    'name' => ' Law',
+                    'image' => 'law.png',
+                    'uni_id' => 1,  
+                ],
+              
+                [
+                    'name' => 'Business & Management',
+                    'image' => 'bussnes.png',
                     'uni_id' => 1,  
                 ]
 

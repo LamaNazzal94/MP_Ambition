@@ -15,7 +15,7 @@ class UniversityController extends Controller
      */
     public function index()
     {
-        // $universities = University::all();
+        // $unis = University::all();
         $universities = University::with('country')->get();
         return view('admin/university/index', compact('universities'));
     }
@@ -29,7 +29,7 @@ class UniversityController extends Controller
     $university = University::find($id);
     $country=Country::find($country_id); // Fetch all countries from the database.
 
-    return view('uniDetailes', compact('university','country','collages'));
+    return view('universities/uniDetailes', compact('university','country','collages'));
 }
 
     /**

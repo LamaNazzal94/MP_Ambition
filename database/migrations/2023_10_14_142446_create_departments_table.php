@@ -16,7 +16,15 @@ return new class extends Migration
             $table->string('name');
             $table->string('image');
             $table->text('introduction');
+
             $table->text('apportunities');
+            $table->text('apportunitie2');
+            $table->text('apportunitie3');
+            $table->text('apportunitie4');
+            $table->text('apportunitie5');
+            $table->text('apportunitie6');
+            $table->text('apportunitie7');
+
             $table->text('cost');
             $table->string('duration_study');
             $table->unsignedBigInteger('college_id'); // Foreign key

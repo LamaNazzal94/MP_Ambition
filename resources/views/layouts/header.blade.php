@@ -13,7 +13,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
 
-    <title>Hostit</title>
+    <title>AMBITION</title>
 
     <script src="{{ asset(' js/singleuni.js ') }}"></script>
     <!-- bootstrap core css -->
@@ -61,13 +61,14 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav  ml-auto">
                             <li class="nav-item ">
+                                
                                 <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="about.php"> About</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Destinations.php">Destinations</a>
+                                <a class="nav-link" href="">Destinations</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="Universities.php">Universities</a>
@@ -77,11 +78,11 @@
                             </li>
                         </ul>
                         <div class="quote_btn-container">
-                            <form class="form-inline">
+                            {{-- <form class="form-inline">
                                 <button class="btn   nav_search-btn" type="submit">
                                     <i class="fa fa-search" aria-hidden="true"></i>
                                 </button>
-                            </form>
+                            </form> --}}
                             <a href="">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
                                 <span>
@@ -89,7 +90,7 @@
                                 </span>
                             </a>
                             @if (Auth::check())
-                                <li>
+                                
                                     <form method="POST" class="dropdown-item" action="{{ route('logout') }}">
                                         @csrf
                                         <a href="{{ route('logout') }}"
@@ -98,11 +99,11 @@
 
                                         </a>
                                     </form>
-                                </li>
+                                
                             @else
-                                <li class="nav-item ">
+                                {{-- <li class="nav-item "> --}}
                                     <a class="nav-link" href="/login">log in <span class="sr-only">(current)</span></a>
-                                </li>
+                                {{-- </li> --}}
                             @endif
                         </div>
                     </div>

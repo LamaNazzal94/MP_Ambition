@@ -29,7 +29,7 @@ class CollegeController extends Controller
     $college = College::find($id);
     $university=University::find($uni_id); // Fetch all countries from the database.
 
-    return view('collegeDetailes', compact('college','university','department'));
+    return view('colleges/collegeDetailes', compact('college','university','department'));
 }
 
     /**

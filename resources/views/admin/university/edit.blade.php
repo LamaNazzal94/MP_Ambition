@@ -105,13 +105,22 @@
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
+
+
             <div class="form-group">
+                <label for="location">University location:</label>
+                <textarea id="location" name="location" rows="4" class="form-control" placeholder="University Requirement" required>{{ $universities->requirement }}</textarea>
+                @error('location')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+            {{-- <div class="form-group">
                 <label for="location">University Location:</label>
                 <input type="text" name="location" class="form-control" placeholder="University Location" value="{{ $universities->location }}">
                 @error('location')
                 <span class="text-danger">{{ $message }}</span>
                 @enderror
-            </div>
+            </div> --}}
             <button type="submit" class="btn btn-primary">Update University</button>
         </form>
     </div>

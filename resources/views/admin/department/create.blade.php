@@ -25,10 +25,46 @@
                         <span>@error('introduction'){{$message}} @enderror</span>
                     </div>
 
+
                     <div class="form-group">
                         <label for="apportunities"></label>
-                        <textarea id="apportunities" name="apportunities" rows="4"  class="form-control" placeholder="Department apportunities" required></textarea>
+                        <input type="text" name="apportunities" class="form-control" placeholder="Department apportunities">
                         <span>@error('apportunities'){{$message}} @enderror</span>
+                    </div>
+                  
+                    
+                    <div class="form-group">
+                        <label for="apportunitie2"></label>
+                        <input type="text" name="apportunitie2" class="form-control" placeholder="Department apportunitie2">
+                        <span>@error('apportunitie2'){{$message}} @enderror</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="apportunitie3"></label>
+                        <input type="text" name="apportunitie3" class="form-control" placeholder="Department apportunitie3">
+                        <span>@error('apportunitie3'){{$message}} @enderror</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apportunitie4"></label>
+                        <input type="text" name="apportunitie4" class="form-control" placeholder="Department apportunitie4">
+                        <span>@error('apportunitie4'){{$message}} @enderror</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="apportunitie5"></label>
+                        <input type="text" name="apportunitie5" class="form-control" placeholder="Department apportunitie5">
+                        <span>@error('apportunitie5'){{$message}} @enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="apportunitie6"></label>
+                        <input type="text" name="apportunitie6" class="form-control" placeholder="Department apportunitie6">
+                        <span>@error('apportunitie6'){{$message}} @enderror</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="apportunitie7"></label>
+                        <input type="text" name="apportunitie7" class="form-control" placeholder="Department apportunitie7">
+                        <span>@error('apportunitie7'){{$message}} @enderror</span>
                     </div>
                     <div class="form-group">
                         <label for="cost"></label>

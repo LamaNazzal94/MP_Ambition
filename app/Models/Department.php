@@ -15,6 +15,12 @@ class Department extends Model
        'image',
         'introduction',
         'apportunities',
+        'apportunitie2',
+        'apportunitie3',
+        'apportunitie4',
+        'apportunitie5',
+        'apportunitie6',
+        'apportunitie7',
         'cost',
         'duration_study',
         'college_id'

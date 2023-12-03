@@ -33,6 +33,24 @@
                                 Department apportunities
                             </th>
                             <th>
+                                Department apportunitie2
+                            </th>
+                            <th>
+                                Department apportunitie3
+                            </th>
+                            <th>
+                                Department apportunitie4
+                            </th>
+                            <th>
+                                Department apportunitie5
+                            </th>
+                            <th>
+                                Department apportunitie6
+                            </th>
+                            <th>
+                                Department apportunitie7
+                            </th>
+                            <th>
                                 Department cost
                             </th>
                             <th>
@@ -59,6 +77,13 @@
                         <td><img src="{{ url('/images/' . $college->image) }}" alt="" width="100px" height="100px"></td>
                         <td>{{$college->introduction}}</td>
                         <td>{{$college->apportunities}}</td>
+                        <td>{{$college->apportunitie2}}</td>
+                        <td>{{$college->apportunitie3}}</td>
+                        <td>{{$college->apportunitie4}}</td>
+                        <td>{{$college->apportunitie5}}</td>
+                        <td>{{$college->apportunitie6}}</td>
+                        <td>{{$college->apportunitie7}}</td>
+
                         <td>{{$college->cost}}</td>
                         <td>{{$college->duration_study}}</td>
 

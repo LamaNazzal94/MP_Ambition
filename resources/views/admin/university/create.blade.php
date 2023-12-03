@@ -66,12 +66,17 @@
                         <input type="text" name="cost" class="form-control" placeholder="University Cost">
                         <span>@error('cost'){{$message}} @enderror</span>
                     </div>
-
                     <div class="form-group">
+                        <label for="location"></label>
+                        <textarea id="location" name="location" rows="4"  class="form-control" placeholder="University location" required></textarea>
+                        <span>@error('location'){{$message}} @enderror</span>
+                    </div>
+
+                    {{-- <div class="form-group">
                         <label for="location"></label>
                         <input type="text" name="location" class="form-control" placeholder="University location">
                         <span>@error('location'){{$message}} @enderror</span>
-                    </div>
+                    </div> --}}
 
                 </div>
             

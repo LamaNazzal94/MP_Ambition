@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LangAcademiesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CountryController;
@@ -13,16 +14,15 @@ use App\Http\Controllers\HomeController;
 
 
 
+
+
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/countryDetailes/{id}', [CountryController::class, 'countryDetailes'])->name('countryDetailes');
 Route::get('/uniDetailes/{id}/{country_id}', [UniversityController::class, 'uniDetailes'])->name('uniDetailes');
  Route::get('/collegeDetailes/{id}/{uni_id}', [CollegeController::class, 'collegeDetailes'])->name('collegeDetailes');
  Route::get('/departmentDetailes/{id}/{college_id}', [DepartmentController::class, 'departmentDetailes'])->name('departmentDetailes');
  Route::get('/applyDetailes', [ApplyController::class, 'applyDetailes'])->name('applyController');
-
-
-
-
+ Route::get('/lanAcademiesDetailes', [LangAcademiesController::class, 'lanAcademiesDetailes'])->name('acadmiesDetailes');
 
 
 
@@ -31,6 +31,8 @@ Route::resource("/countries", CountryController::class);
 Route::resource("/universities", UniversityController::class);
 Route::resource("/colleges", CollegeController::class);
 Route::resource("/departments", DepartmentController::class);
+Route::resource("/lanAcadimes", LangAcademiesController::class);
+
 Route::resource("/applies", ApplyController::class);
 
 
@@ -44,5 +46,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
 
 require __DIR__.'/auth.php';

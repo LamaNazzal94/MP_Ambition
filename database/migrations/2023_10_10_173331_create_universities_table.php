@@ -24,7 +24,7 @@ return new class extends Migration
             $table->text('about');
             $table->text('requirement');
             $table->text('cost');
-            $table->string('location');
+            $table->text('location');
             $table->unsignedBigInteger('country_id'); // Set a default country ID
             $table->foreign('country_id')->references('id')->on('countries')->onDelete('cascade');
             // $table->unsignedBigInteger('country_id')->nullable();

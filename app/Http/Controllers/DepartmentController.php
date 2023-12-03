@@ -26,7 +26,7 @@ class DepartmentController extends Controller
         $department = Department::find($id);
         $college=College::find($college_id); // Fetch all countries from the database.
 
-        return view('departmentDetailes', compact('department','college'));
+        return view('departments/departmentDetailes', compact('department','college'));
     }
 
     /**
@@ -52,7 +52,15 @@ class DepartmentController extends Controller
             'name' => 'required|string|max:255',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // You can customize these rules
             'introduction' => 'required',
+
             'apportunities' => 'required',
+            'apportunitie2' => 'required',
+            'apportunitie3' => 'required',
+            'apportunitie4' => 'required',
+            'apportunitie5' => 'required',
+            'apportunitie6' => 'required',
+            'apportunitie7' => 'required',
+
             'cost' => 'required',
             'duration_study' => 'required',
             
@@ -69,6 +77,14 @@ class DepartmentController extends Controller
       
         $departments->introduction = $validatedData['introduction'];
         $departments->apportunities = $validatedData['apportunities'];
+        $departments->apportunitie2 = $validatedData['apportunitie2'];
+        $departments->apportunitie3 = $validatedData['apportunitie3'];
+        $departments->apportunitie4 = $validatedData['apportunitie4'];
+        $departments->apportunitie5 = $validatedData['apportunitie5'];
+        $departments->apportunitie6 = $validatedData['apportunitie6'];
+        $departments->apportunitie7 = $validatedData['apportunitie7'];
+
+
         $departments->cost = $validatedData['cost'];
         $departments->duration_study = $validatedData['duration_study'];
         

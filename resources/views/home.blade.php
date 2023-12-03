@@ -22,7 +22,7 @@
                         Read More
                       </a> -->
                   <a href="applay.php" class="btn-2">
-                    Applay Now </a>
+                    Apply Now </a>
                 </div>
               </div>
             </div>
@@ -192,13 +192,18 @@
             <h2>
               Apply to Study Abroad with ambition
             </h2>
-            <p>
-              6 Steps to Studying Globally with ambition
-            </p>
+          
+               <ol>
+                <br>
+                <li> Select Your Country</li>
+                <li> Choose Your University</li>
+                <li> Pick a College</li>
+                <li> Select Your Department</li>
+                <li> Review Your Choices</li>
+                <li> Complete Your Application</li>
+            </ol>        
           </div>
-          <a href="">
-            Read More
-          </a>
+        
         </div>
       </div>
     </div>
@@ -215,15 +220,22 @@
           <h2>
               Study Destinations
           </h2>
+          <div class="heading_container heading_center">
+            <p>
+                There is a wide variety of countries .
+  
+            </p>
+        </div>
       </div>
+    
+    
       <div class="price_container">
-          @foreach($countries as $country)
+          @foreach($cou as $country)
           <div class="box">
-              <div class="detail-box">
-                  <h4>{{ $country->name }}</h4>
-                  <img src="{{ asset('images/' . $country->image) }}"class="mb-4" style="width:250px" alt="{{ $country->name }}">
-                  <a href="{{ route('countryDetailes', $country->id) }}">
-                      See Details
+              <div class="detail-box" style="padding-bottom: 15px; height: 240px;  ">
+                  <img  src="{{ asset('images/' . $country->image) }}"class="mb-12" style="width:260px ;   height: 180px;padding-bottom: 15px " alt="{{ $country->name }}">
+                  <a href="{{ route('countryDetailes', $country->id) }}"> <strong>
+                      {{ $country->name }} </strong>
                   </a>
               </div>
           </div>
@@ -232,166 +244,52 @@
   </div>
 </section>
 
-{{-- <section class="price_section layout_padding">
-  <div class="container">
-    <div class="heading_container heading_center">
-      <h2>
-        Study Destinations
-      </h2>
-    </div>
-    <div class="price_container ">
-      <div class="box">
-        <div class="detail-box">
-          <h4>Germany</h4>
-          <img src="img/germany1.png" class="mb-4" style="width:250px"> </i>
-          <a href="Destinations.php">
-            See Details
-          </a>
-        </div>
-        <!-- <div class="btn-box">
-            <a href="">
-              See Universities
-            </a>
-          </div> -->
-      </div>
-      <div class="box">
-        <div class="detail-box">
-          <h4>Canada</h4>
-          <img src="img/canda.png" class="mb-4" style="width:250px"> </i>
-          <a href="Destinations.php">
-            See Details
-          </a>
 
-        </div>
-        <!-- <div class="btn-box">
-            <a href="">
-              See Universities
-            </a>
-          </div> -->
-      </div>
-      <div class="box">
-        <div class="detail-box">
-          <h4>USA</h4>
-          <img src="img/usa1.jpg" class="mb-4" style="width:250px"> </i>
-          <a href="Destinations.php">
-            See Details
-          </a>
-        </div>
-        <!-- <div class="btn-box">
-            <a href="">
-              See Universities
-            </a>
-          </div> -->
-      </div>
-    </div>
-  </div>
-</section> --}}
 
 <!-- Destinations section -->
 
 <!-- universites section -->
 
+
 <section class="service_section layout_padding">
   <div class="container">
-    <div class="heading_container heading_center">
-      <h2>
-        Recommended Universities
-      </h2>
-    </div>
+      <div class="heading_container heading_center">
+          <h2>
+            Our Universities
+          </h2>
+      </div>
+      <div class="heading_container heading_center">
+          <p>
+              There is a wide variety of universities in different cities.
+
+          </p>
+      </div>
   </div>
   <div class="container ">
-    <div class="row">
-      <div class="col-md-6 col-lg-4">
-        <div class="box ">
-          <div>
-            <img class="uni_pict" src="img/1.Technische Universität Dortmund.jpg" alt="">
-          </div>
-          <div class="detail-box">
-            <h4>
-              Technische Universität Dortmund
-            </h4>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
+      <div class="row">
+
+          @foreach ($unis as $uni)
+              <div class="col-md-6 col-lg-4">
+                  <div class="box">
+                      <div>
+                          <img class="uni_pict" src="{{ asset('images/' . $uni->main_image) }}"
+                              alt="{{ $uni->name }}">
+                      </div>
+                      <div class="detail-box">
+                          <h4 style="width: 300px">{{ $uni->name }}</h4>
+                          <a href="{{ route('uniDetailes', ['id' => $uni->id, 'country_id' => $country->id]) }}">
+                              See Details
+                          </a>
+
+                      
+                          {{-- <a href="{{ route('university.details', $uni->id) }}">Read More</a> --}}
+                      </div>
+                  </div>
+              </div>
+          @endforeach
+
+
       </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="box ">
-          <div>
-            <img class="uni_pict" src="img/2.Brandenburg University of Technology - Copy.jpg" alt="">
-          </div>
-          <div class="detail-box">
-            <h4>
-              Brandenburg University of Technology
-            </h4>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="box ">
-          <div>
-            <img class="uni_pict" src="img/4.Dresden University of Technology - Copy.jpg" alt="">
-          </div>
-          <div class="detail-box">
-            <h4>
-              Dresden University of Technology
-            </h4>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="box ">
-          <div>
-            <img class="uni_pict" src="img/8.Technische Universität Darmstadt - Copy.jpg" alt="">
-          </div>
-          <div class="detail-box">
-            <h4>
-              Kaiserslautern University of Technology
-            </h4>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="box ">
-          <div>
-            <img class="uni_pict" src="img/7.Braunschweig University of Technology - Copy.jpg" alt="">
-          </div>
-          <div class="detail-box">
-            <h4>
-              Braunschweig University of Technology
-            </h4>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-4">
-        <div class="box ">
-          <div>
-            <img class="uni_pict" src="img/8.Technische Universität Darmstadt - Copy.jpg" alt="">
-          </div>
-          <div class="detail-box">
-            <h4>
-              Technische Universität Darmstadt
-            </h4>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -405,7 +303,7 @@
 
 
 <!-- client section -->
-<section class="client_section ">
+{{-- <section class="client_section ">
   <div class="container">
     <div class="heading_container heading_center">
       <h2>
@@ -537,11 +435,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 <!-- end client section -->
 
 <!-- contact section -->
-<section class="contact_section layout_padding-bottom">
+{{-- <section class="contact_section layout_padding-bottom">
   <div class="container">
     <div class="heading_container heading_center">
       <h2>
@@ -574,7 +472,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> --}}
 <!-- end contact section -->
 
 @endsection

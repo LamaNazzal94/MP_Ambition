@@ -28,7 +28,7 @@ public function countryDetailes($id)
     $university= University::where('country_id',$id)->get();
     $countries = Country::find($id); // Fetch all countries from the database.
 
-    return view('countryDetailes', compact('countries','university'));
+    return view('countries/countryDetailes', compact('countries','university'));
 }
   
     public function create()
