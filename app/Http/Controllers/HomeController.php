@@ -28,4 +28,9 @@ return view('home', compact('cou' , 'unis'));
 
     return view('universities/uniDetailes', compact('university','country','collages'));
 }
+
+
+     public function adminHome(){
+        return view('admin.main');
+     }
 }

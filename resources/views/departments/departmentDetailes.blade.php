@@ -84,12 +84,11 @@
                                 <h4>
                                     Apply Now
                                 </h4>
-                                    <form method="get" action="{{ route('applyController') }}">
 
                                         <button type="submit" style="background-color: initial ; border:0ch ">
-                                            <a href="/applyDetailes" > Apply Now</a>
+                                            <a href="/applyDetailes/{{ $department->id }}" > Apply Now</a>
                                         </button>
-                                    </form>
+                                
                               
                             </div>
 

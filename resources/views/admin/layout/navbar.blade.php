@@ -59,34 +59,34 @@
                     </div> --}}
                     
                         <a class="sidenav-item-link" href="{{ route('countries.index') }}">
-                            <i class="fas fa-file-contract"></i>
-                            <span class="nav-text">countries</span>
+                           
                     
                     </li>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="{{ route('adminHome') }}" class="nav-item nav-link @if (request()->is('adminHome')) active @endif
+                        "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <div>
-                        <a href="{{ route('countries.index') }}" class="nav-link dropdown-toggle" ><i class="fa fa-laptop me-2"></i>countries</a>
+                        <a href="{{ route('countries.index') }}" class="nav-link dropdown-toggle @if (request()->is('countries')) active @endif
+                            " ><i class="fa fa-laptop me-2"></i>countries</a>
                         {{-- <div class="dropdown-menu bg-transparent border-0">
                             <a href="button.html" class="dropdown-item">Buttons</a>
                             <a href="typography.html" class="dropdown-item">Typography</a>
                             <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div> --}}
                     </div>
-                    <a href="{{ route('universities.index') }}" class="nav-item nav-link"><i class="fa fa-th me-2"></i>universities</a>
-                    <a href="{{ route('colleges.index') }}" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>colleges</a>
-                    <a href="{{ route('departments.index') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>departments</a>
-                    <a href="chart.html" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-                            <a href="signin.html" class="dropdown-item">Sign In</a>
-                            <a href="signup.html" class="dropdown-item">Sign Up</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                            <a href="blank.html" class="dropdown-item">Blank Page</a>
-                        </div>
-                    </div>
+                    <a href="{{ route('universities.index') }}" class="nav-item nav-link @if (request()->is('universities')) active @endif
+                        "><i class="fa fa-th me-2"></i>universities</a>
+                    <a href="{{ route('colleges.index') }}" class="nav-item nav-link @if (request()->is('colleges')) active @endif
+                        "><i class="fa fa-keyboard me-2"></i>colleges</a>
+                    <a href="{{ route('departments.index') }}" class="nav-item nav-link @if (request()->is('customers')) active @endif
+                        @if (request()->is('departments')) active @endif
+                        "><i class="fa fa-table me-2"></i>departments</a>
+                    <a href="{{ route('lanAcadimes.index') }}"  class="nav-item nav-link @if (request()->is('lanAcadimes')) active @endif
+                        "><i class="fa fa-chart-bar me-2"></i>languge acadmies</a>
+                        <a href="{{ route('applies.index') }}" class="nav-item nav-link @if (request()->is('applies')) active @endif
+                            "><i class="fa fa-th me-2"></i>applications</a>
+                 
                 </div>
             </nav>
         </div>
@@ -172,8 +172,8 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <span class="d-none d-lg-inline-flex">John Doe</span>
+                            <img class="rounded-circle me-lg-2" src="{{ Auth::user()->image }}" alt="" style="width: 40px; height: 40px;">
+                            <span class="d-none d-lg-inline-flex">{{ Auth::user()->name }}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>

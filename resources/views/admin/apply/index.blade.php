@@ -33,13 +33,7 @@
                             <th>
                                 bio
                             </th>
-                        
-                            <th>
-                                department name
-                            </th>
-                            <th>
-                                user name
-                            </th>
+                    
                         <th>
                             Action
                         </th>
@@ -61,16 +55,7 @@
                         <td>{{$apply->nationalID}}</td>
                         <td>{{$apply->bio}}</td>
 
-                        <td>{{$apply->country->name}}</td>
-
-
-                        {{-- ?? --}}
-                        {{-- <td>{{ optional($apply->country)->name }}</td> --}}
-                        {{-- <td>{{$apply->country->name}}</td> --}}
-                        
-
-                        <td class="project-actions text-right">
-    
+                           <td class="project-actions text-right">
                             <a class="btn btn-info " href="{{ route('applies.edit', $apply->id) }}">
                                 <i class="fas fa-pencil-alt">
                                 </i>

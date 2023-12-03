@@ -21,8 +21,7 @@
                   <!-- <a href="" class="btn-1">
                         Read More
                       </a> -->
-                  <a href="applay.php" class="btn-2">
-                    Apply Now </a>
+                 
                 </div>
               </div>
             </div>
@@ -151,9 +150,7 @@
             seamless and hassle-free process to apply and register for universities in the United Online Republic
             (UOREP), Canada, and the United States of America (USA). Our goal is to assist you in your academic journey
             and help you achieve your dreams of pursuing higher education in these esteemed institutions.</p>
-          <a href="">
-            Read More
-          </a>
+        
         </div>
       </div>
       <div class="col-md-6 ">

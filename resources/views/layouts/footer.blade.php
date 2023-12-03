@@ -57,23 +57,23 @@
             <div class="info_links">
               <a class="active" href="index.php">
                 <!-- <img src="images/nav-bullet.png" alt=""> -->
-              _ Home
+              Home
               </a>
               <a class="" href="about.php">
                 <!-- <img src="images/nav-bullet.png" alt=""> -->
-                _ About
+                About
               </a>
               <a class="" href="service.php">
                 <!-- <img src="images/nav-bullet.png" alt=""> -->
-                _ Destination
+                 Destination
               </a>
               <a class="" href="price.php">
                 <!-- <img src="images/nav-bullet.png" alt=""> -->
-                _ Universities
+                Universities
               </a>
               <a class="" href="contact.php">
                 <!-- <img src="images/nav-bullet.png" alt=""> -->
-                _ Contact Us
+                 Contact Us
               </a>
             </div>
           </div>

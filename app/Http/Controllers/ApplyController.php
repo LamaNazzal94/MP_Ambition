@@ -6,6 +6,8 @@ use App\Models\Apply;
 use App\Http\Requests\StoreApplyRequest;
 use App\Http\Requests\UpdateApplyRequest;
 use App\Models\Department;
+use App\Models\User;
+use Auth;
 use Illuminate\Http\Request;
 
 
@@ -20,10 +22,49 @@ class ApplyController extends Controller
         return view('admin.apply.index', compact('applies'));
     }
 
-    public function applyDetailes(){
-   // Fetch all countries from the database.
+    public function applyDetailes($id)
+    {
+        // Fetch all countries from the database.
 
-        return view('applyDetailes');
+        return view('applyDetailes', compact('id'));
+    }
+    public function applyUser(Request $request)
+    {
+        $apply = new Apply; // Replace 'YourModel' with your actual Eloquent model
+        // Validate the incoming request data
+      
+        $validatedData = $request->validate([
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required',
+            'high_school_certificate' => 'required',
+            'age' => 'required',
+            'nationalID' => 'required',
+            'bio' => 'required',
+
+            // 'country_id' => 'numeric',
+        ]);
+
+
+        $apply->first_name = $request->input('first_name');
+        $apply->last_name = $validatedData['last_name'];
+        $apply->email = $validatedData['email'];
+        $apply->high_school_certificate = $validatedData['high_school_certificate'];
+        $apply->age = $validatedData['age'];
+        $apply->nationalID = $validatedData['nationalID'];
+        $apply->bio = $validatedData['bio'];
+        $apply->department_id = $request->input('department_id');
+        $apply->user_id =Auth::id(); // Get the 'country_id' from the request
+
+        $department = Department::find($request->input('country'));
+        if ($department) {
+            $apply->country()->associate($department);
+        }
+        $apply->save();
+        $user = User::find(Auth::id());
+        session()->flash('success', 'Applied successfully');
+            return redirect()->route('home')->with('success', 'applied successfully');
+       
     }
 
     /**
@@ -31,7 +72,7 @@ class ApplyController extends Controller
      */
     public function create()
     {
-        $department=Department::all();
+        $department = Department::all();
         return view('admin.apply.create', compact("department"));
     }
 
@@ -56,30 +97,24 @@ class ApplyController extends Controller
             // 'country_id' => 'numeric',
         ]);
 
-        // Handle main image
-        
-        // Create a new university record in the database using the Eloquent model
-        $apply->name = $request->input('first_name');
-    
-        $apply->accommodation = $validatedData['last_name'];
-        $apply->offer = $validatedData['email'];
-        $apply->ranking = $validatedData['high_school_certificate'];
-        $apply->about = $validatedData['age'];
-        $apply->requirement = $validatedData['nationalID'];
-        $apply->cost = $validatedData['bio'];
-       
-        $apply->department_id =  $request->input('department'); // Get the 'country_id' from the request
+        $apply->first_name = $request->input('first_name');
+        $apply->last_name = $validatedData['last_name'];
+        $apply->email = $validatedData['email'];
+        $apply->high_school_certificate = $validatedData['high_school_certificate'];
+        $apply->age = $validatedData['age'];
+        $apply->nationalID = $validatedData['nationalID'];
+        $apply->bio = $validatedData['bio'];
+
+        $apply->department_id = $request->input('department'); // Get the 'country_id' from the request
         $department = Department::find($request->input('country'));
         if ($department) {
             $apply->country()->associate($department);
         }
         $apply->save();
+        $user = User::find(Auth::id());
+        if ($user->role == 'admin')
+            return redirect()->route('applies.index')->with('success', 'Data stored successfully');
 
-        // Redirect or return a response as needed
-    
-
-
-        return redirect()->route('applies.index')->with('success', 'Data stored successfully');
     }
 
     /**
